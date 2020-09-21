@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>部落格</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= simple_form_for @user, url: sessions_path, method:'post' do |f| %>
+      <%= f.input :name, label: '昵称', input_html: { class: 'form-control' } %>
+      <%= f.input :mobile, label: '手机号码', input_html: { class: 'form-control' } %>
+      <%= f.input :password, label: '密码', input_html: { class: 'form-control' } %>
+
+      <%= f.button :submit, value: '注册', class: 'btn btn-lg btn-primary btn-block' %>
+    <% end %>
+
+  </body>
+</html>
+
